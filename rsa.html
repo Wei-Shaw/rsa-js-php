@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Javascript And PHP RSA Test</title>
+    <script src="src/js/jsencrypt/jsencrypt.min.js"></script>
+    <script src="src/js/zepto.min.js"></script>
+    <script src="rsa_pubkey.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('.button').on('click', function() {
+          var encrypt = new JSEncrypt();
+          encrypt.setPublicKey(JSEncrypt_pubkey);
+          var encrypted = encrypt.encrypt($('#step_1').val());
+          $('#step_2').val(encrypted);
+          $.ajax({
+            url:'rsa.php',
+            type:'post',
+            data:{encrypted:encrypted},
+            dataType:'json',
+            success:function(responese){
+              if (responese.decrypted) {
+                $('#step_3').val(responese.decrypted);
+                alert('Success! Time:'+responese.time+' s');
+              } else {
+                alert('Eorror! Time:'+responese.time+'s');
+              }
+            }
+          });
+
+        });
+      });
+    </script>
+  </head>
+  <body style="background:#ddd">
+    <center style="margin-top:100px;">
+    <label for="step_1">加密前</label><br/>
+    <textarea id="step_1" name="input" type="text" rows=4 cols=60>Encrypt content</textarea><br/>
+    <label for="step_2">加密后</label><br/>
+    <textarea id="step_2" name="input" type="text" rows=10 cols=60></textarea><br/>
+    <label for="step_3">后端解密结果</label><br/>
+    <textarea id="step_3" name="input" type="text" rows=4 cols=60></textarea><br/>
+    <br/>
+    <input class="button" type="button" value="Click me!" style="height:40px;width:445px;border:0;background:#FF3030"/><br/>
+    </center>
+  </body>
+</html>
