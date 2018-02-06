@@ -14,7 +14,7 @@
 - 于是私钥泄露就意味着RSA加密失去意义；
 ## 使用方式
 > 请确保PHP的openssl扩展开启，且保证php在环境变量中，如果是windows需添加环境变量：名 OPENSSL_CONF，值 D:\http\php\extras\ssl\openssl.cnf(根据openssl.cnf目录而定)；
-- 生成新的公私钥文件在项目根目录命令行运行；
+- 生成新的公私钥文件在项目根目录命令行运行：
 ```bash
 php rsa.php new
 ```
