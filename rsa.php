@@ -17,6 +17,8 @@
  *   You should have received a copy of the GNU General Public License
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+// 记录运行时长
 $t_1 = microtime(true);
 require_once 'src/rsa.class.php';
 // 初始化参数
