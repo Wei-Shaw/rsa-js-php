@@ -1,5 +1,5 @@
 # RSA-JS-PHP
-> 前后端交互时为了保证信息安全可使用RSA方式加密信息，在数据量大的时候可采用AES+RSA结合方式。[DEMO演示地址](https://api.wm07.cn/test/rsa-js-php/rsa.html)
+> 前后端交互时为了保证信息安全可使用RSA方式加密信息，在数据量大的时候可采用AES+RSA结合方式。[DEMO演示地址](http://d.wm07.cn/test/rsa-js-php/rsa.html)
 ## 一点历史
 1976年以前，所有的加密方法都是同一种模式：  
 （1）甲方选择某一种加密规则，对信息进行加密；  
